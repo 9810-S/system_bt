@@ -192,7 +192,7 @@ bool btif_a2dp_sink_init() {
 
   /* Schedule the rest of the operations */
   if (!btif_a2dp_sink_cb.worker_thread.EnableRealTimeScheduling()) {
-    LOG(ERROR) << __func__
+    LOG(FATAL) << __func__
                << ": Failed to increase A2DP decoder thread priority";
   }
   btif_a2dp_sink_cb.worker_thread.DoInThread(
